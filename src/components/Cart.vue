@@ -3,7 +3,7 @@
 
 
 <button class="btn btn-primary" data-toggle="modal" 
-data-target="#shoppingCart">Cart ({{ inCart.length }})</button>
+data-target="#shoppingCart">Home ({{ inCart.length }})</button>
 
 <div id="shoppingCart" class="modal fade">
   <div class="modal-dialog">
@@ -15,14 +15,30 @@ data-target="#shoppingCart">Cart ({{ inCart.length }})</button>
         </button>
       </div>
       <div class="modal-body">
-       Cart Shopping items.
+        <table class="table">
+  <tbody>
+    <tr v-for="item in inCart" :key="item.product.id">
+     
+      <td>{{ item.product.name }}</td>
+      <td>{{ item.quantity }}</td>
+      <td>Rs.{{ item.product.price}}</td>
+       
+    </tr>
+ <td class="text-center">Total Rs.{{ totalPrice }}</td>
+   <tr>
+     </tr>
+  </tbody>
+</table>
       </div>
       <div class="modal-footer">
         <button class="btn btn-secondary" data-dismiss="modal">Keep shopping</button>
-        <button class="btn btn-primary">Check out</button>
+        
       </div>
     </div>
   </div>
+
+
+  
 </div>
 
     </div>
@@ -37,9 +53,15 @@ computed: {
       return this.$store.getters.inCart; 
       },
 
-  },
+      totalPrice(){
+          return this.$store.getters.totalPrice; 
+      }
 
+     
 
+    },
+
+    
 
 };
 </script>

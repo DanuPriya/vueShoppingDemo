@@ -11,12 +11,9 @@
     </div>
       
      <div class="row">
-     <HelloWorld v-for="x in items" 
-       :key="x.id"
-       :id="x.id"
-       :name="x.name"
-       :image="x.image"
-       :price="x.price"
+     <HelloWorld v-for="product in items" 
+       :key="product.id"
+       :product="product"
        />
       </div>
  </div>

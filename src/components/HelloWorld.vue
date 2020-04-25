@@ -1,11 +1,11 @@
 <template>
  <div class="col-md-3">
          <div class="card">
-        <img :src="image" :alt="name" class="card-img-top">
+        <img :src="product.image" :alt="product.name" class="card-img-top">
         <div class="card-body">
-        <h5 class="card-title">{{name}}</h5>
-          <div class="card-text">{{price}}</div>
-         <button class="btn btn-primary" v-on:click="cart(id)">Add To Cart</button>
+        <h5 class="card-title">{{product.name}}</h5>
+          <div class="card-text">Rs.{{product.price}}</div>
+         <button class="btn btn-primary" v-on:click="addToCart()">Add To Cart</button>
        </div>
        </div>
        </div>
@@ -17,12 +17,17 @@
 
 export default {
   name: 'HelloWorld',
-  props: ['id','name','image','price'],
+  props: ["product"],
+
   methods:{
- cart(id){
-   this.$store.dispatch('cart', id);
+ addToCart(){
+   this.$store.dispatch('addProductToCart',{
+product:this.product,
+quantity:1
+   });
  }
   },
+  
 };
 </script>
 
