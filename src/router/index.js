@@ -1,20 +1,22 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
-import About from '../views/About.vue'
+import Product from '../views/Product.vue'
 
 Vue.use(VueRouter)
 
-  const routes = [
+const routes = [
   {
     path: '/',
-    name: 'Home',
-    component: Home
+    component: Home,
+    name: 'home'
+
   },
   {
-    path: '/about',
-    name: 'About',
-    component: About
+    path: '/product/:id',
+    component: Product,
+    name: 'product',
+    props: true
   }
 ]
 
