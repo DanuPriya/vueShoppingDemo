@@ -4,9 +4,10 @@
       <img :src="product.image" :alt="product.name" class="card-img-top" />
       <div class="card-body">
         <h5 class="card-title">
-          <router-link :to="{name: 'product' ,  params: {id: product.id}}">{{product.name}}</router-link>
+          <router-link :to="{name: 'product' ,  params: {id: product.id} }">{{product.name}}</router-link>
         </h5>
         <div class="card-text">Rs.{{product.price}}</div>
+
         <button class="btn btn-primary" v-on:click="addToCart()">Add To Cart</button>
       </div>
     </div>

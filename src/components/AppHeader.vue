@@ -3,7 +3,8 @@
     <nav class="navbar navbar-expand navbar-dark bg-dark">
       <div class="container">
         <div class="nav navbar-nav">
-          <router-link to="/" class="nav-tem nav-link active">Home</router-link>
+          <router-link to="/" class="nav-tem nav-link active">Logout</router-link>
+          <router-link :to="{name: 'home'}" class="nav-tem nav-link">Home</router-link>
           <a class="nav-item nav-link" href="#">Product</a>
         </div>
 
