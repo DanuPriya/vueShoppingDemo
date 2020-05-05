@@ -6,10 +6,7 @@
           <router-link to="/" class="nav-tem nav-link active">Logout</router-link>
           <router-link :to="{name: 'home'}" class="nav-tem nav-link">Home</router-link>
           <a class="nav-item nav-link" href="#">Product</a>
-        </div>
-
-        <div>
-          <Cart />
+          <router-link :to="{name: 'cart'}" class="nav-tem nav-link">Cart</router-link>
         </div>
       </div>
     </nav>
@@ -17,10 +14,7 @@
 </template>
 
 <script>
-import Cart from "./Cart";
-export default {
-  components: { Cart }
-};
+export default {};
 </script>
 
 <style>
