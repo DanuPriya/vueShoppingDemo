@@ -28,7 +28,7 @@ export default new Vuex.Store({
 
       let total = 0;
       state.inCart.forEach(item => {
-        total += item.product.price * item.quantity;
+        total =total+ (item.product.price * item.quantity);
       })
       return total;
     }

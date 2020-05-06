@@ -6,7 +6,7 @@
           <router-link to="/" class="nav-tem nav-link active">Logout</router-link>
           <router-link :to="{name: 'home'}" class="nav-tem nav-link">Home</router-link>
           <a class="nav-item nav-link" href="#">Product</a>
-          <router-link :to="{name: 'cart'}" class="nav-tem nav-link">Cart</router-link>
+          <router-link :to="{name: 'cart'}" class="nav-tem nav-link">Cart({{inCart.length}})</router-link>
         </div>
       </div>
     </nav>
@@ -14,7 +14,13 @@
 </template>
 
 <script>
-export default {};
+export default {
+  computed: {
+    inCart() {
+      return this.$store.getters.inCart;
+    }
+  }
+};
 </script>
 
 <style>
